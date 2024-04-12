@@ -4,6 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const { verifyToken } = require('../controllers/auth');
+const jwt = require('jsonwebtoken')
 
 // Import the User model for database operations
 const User = require('../models/user');
@@ -62,6 +63,9 @@ router.post('/register', async (req, res) => {
 
 // Function to generate JWT token
 function generateToken(user) {
+
+    const token = jwt.sign({ user: user }, process.env.SECRET_KEY, { expiresIn: 3600000 })
+    return token
     // Implement JWT token generation logic here
     // For example, you can use the jsonwebtoken package
     // Return the generated token

@@ -18,4 +18,4 @@ const CONNECTDB = (url) => {
 };
 
 // Exporting the CONNECTDB function to make it accessible in other modules
-module.exports = CONNECTDB;
+module.exports = CONNECTDB; 
