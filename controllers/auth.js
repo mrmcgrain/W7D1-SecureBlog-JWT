@@ -17,7 +17,7 @@ const verifyToken = (req, res, next) => {
         const token = authHeader.split(" ")[1];
 
         // Verifying the token using the JWT_SECRET stored in the environment variables
-        jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
             // Handling errors if the token is not valid
             if (err) res.status(403).json("Token is not valid!");
 

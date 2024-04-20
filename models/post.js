@@ -11,6 +11,8 @@ const postSchema = new Schema({
     // User ID field with type String, required
     userId: {
         type: String,
+        // type: Schema.Types.ObjectId,
+        // ref: 'User',
         required: true
     },
     // Description field with type String, required
